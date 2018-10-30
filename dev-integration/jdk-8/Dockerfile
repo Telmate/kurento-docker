@@ -13,6 +13,7 @@ RUN apt-get update -y \
     curl \
     git \
     mediainfo \
+    libmediainfo-dev \
     python \
     python-dev \
     gnupg \
@@ -28,12 +29,6 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE_VERSION | bash - \
 ENV PATH $PATH:/nodejs/bin
 
 RUN npm -g install bower
-
-RUN pip install \
-  awscli \
-  boto3 \
-  dnspython \
-  pyOpenSSL
 
 # Install ffmpeg on debian jessie (https://www.deb-multimedia.org/)
 # It is not available on official repositories (https://wiki.debian.org/ffmpeg)
